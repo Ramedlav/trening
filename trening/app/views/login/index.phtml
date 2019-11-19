@@ -1,0 +1,21 @@
+<h2>Login up using this form</h2>
+
+<?php echo $this->tag->form("login/login"); ?>
+
+
+<p>
+    <label for="login">login</label>
+    <?php echo $this->tag->textField("login"); ?>
+</p>
+
+<p>
+    <label for="password">password</label>
+    <?php echo $this->tag->textField("password"); ?>
+</p>
+
+
+<p>
+    <?php echo $this->tag->submitButton("Login"); ?>
+</p>
+
+</form>
