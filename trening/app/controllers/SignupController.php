@@ -12,14 +12,22 @@ class SignupController extends \Phalcon\Mvc\Controller
 
     public function registerAction()
     {
+        $name = $this->request->getPost('name');
+        $login = $this->request->getPost('login');
+        $password = $this->request->getPost('password');
+        $email = $this->request->getPost('email');
+        $type = 'user';
         $user = new Users();
 
+        echo $name." ".$login." ".$email." ".$type." ".$password;
+
         $success = $user->save(
-            $this->request->getPost(),
             [
-                "login",
-                "name",
-                "password",
+                $name,
+                $login,
+                $password,
+                $email,
+                $type,
             ]
         );
 

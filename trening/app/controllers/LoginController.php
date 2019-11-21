@@ -13,8 +13,9 @@ class LoginController extends \Phalcon\Mvc\Controller
 
     public function exitAction()
     {
-        $this->session->destroy();
-        $this->view->pick('index/index');
+        if($this->session->destroy()){
+
+        $this->view->pick('index/index');}
 
     }
 

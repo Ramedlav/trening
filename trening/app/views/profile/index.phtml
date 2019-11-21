@@ -2,8 +2,9 @@
 //    if (!($this->session)){$this->view->pick('login/index');}
     echo 'congratulations, you are login!';
     echo '<br>'.$this->session->get('name');
-    echo '<br>'.$this->session->get('lifetime');
-    echo $this->tag->linkTo(
+//    echo '<br>'.$this->session->get('lifetime');
+//$this->partial('login/login');
+echo $this->tag->linkTo(
         "login/exit",
         "exit"
     );
