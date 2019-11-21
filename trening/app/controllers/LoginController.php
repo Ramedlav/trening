@@ -1,4 +1,8 @@
+
 <?php
+
+use Phalcon\Di;
+use Phalcon\Session\Adapter\Files as Session;
 class LoginController extends \Phalcon\Mvc\Controller
 {
 
@@ -7,8 +11,18 @@ class LoginController extends \Phalcon\Mvc\Controller
 
     }
 
+    public function exitAction()
+    {
+        $this->session->destroy();
+        $this->view->pick('index/index');
+
+    }
+
+
     public function loginAction()
     {
+
+        $di = new Di();
         $login=$this->request->getPost('login');
         $password=$this->request->getPost('password');
 
@@ -16,8 +30,16 @@ class LoginController extends \Phalcon\Mvc\Controller
         $user = Users::findFirst(["login = '".$login."'"]);
 
         if ($user->password == $password){
-//            $this->request->redirect('profile');
-            echo 'you in';
+            $di->setShared(
+                'session',
+                function () {
+                    $session = new Session();
+                    $session->start();
+                    return $session;
+                }
+            );
+        $this->session->set('name', $user->name);
+            $this->view->pick('profile/index');
         }
     }
 
