@@ -6,7 +6,7 @@ class MenuController extends  \Phalcon\Mvc\Controller
     {
 //        $category = Categories::findFirst();//$this->modelsManager->executeQuery('Select * FROM categories');
 
-        $this->request->isPost('categories' = 'werefi');//$category->name);
+        $this->request->setVar('categories' = 'werefi');//$category->name);
     }
 
 
