@@ -40,7 +40,13 @@ class LoginController extends \Phalcon\Mvc\Controller
                 }
             );
         $this->session->set('name', $user->name);
-            $this->view->pick('profile/index');
+            return $this->dispatcher->forward(
+                [
+                    "controller" => "profile",
+                    "action"     => "index",
+                ]
+            );
+//            $this->view->pick('profile/index');
         }
     }
 

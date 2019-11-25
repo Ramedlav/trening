@@ -5,17 +5,28 @@
 
 <p>
     <label for="login">login</label>
-    <?php echo $this->tag->textField("login"); ?>
+    <?php echo $this->tag->textField([
+        "login",
+        "class" => "form-control",
+        "placeholder" => "Enter login"
+    ]); ?>
 </p>
 
 <p>
     <label for="password">password</label>
-    <?php echo $this->tag->textField("password"); ?>
+    <?php echo $this->tag->passwordField([
+        "password",
+        "class" => "form-control",
+        "placeholder" => "Password"
+    ]); ?>
 </p>
 
 
 <p>
-    <?php echo $this->tag->submitButton("Login"); ?>
+    <?php echo $this->tag->submitButton([
+        "Login",
+        "class" => "btn btn-success"
+    ]); ?>
 </p>
 
 </form>

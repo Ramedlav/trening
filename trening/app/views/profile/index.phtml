@@ -1,11 +1,16 @@
 <?php
-//    if (!($this->session)){$this->view->pick('login/index');}
+    if (($this->session)){echo 'session is work  ';}
     echo 'congratulations, you are login!';
-    echo '<br>'.$this->session->get('name');
+    $name = $this->session->get('name');
+    if($name){
+        echo '<br>'.$name;}
+    else{echo 'DAAAA';}
+
 //    echo '<br>'.$this->session->get('lifetime');
 //$this->partial('login/login');
 echo $this->tag->linkTo(
         "login/exit",
         "exit"
     );
+$this->partial('menu/index');
 ?>

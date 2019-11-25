@@ -12,7 +12,7 @@ class SessionController extends  \Phalcon\Mvc\Controller
 
     public function profileAction()
     {
-        $this->view->('profile/index');
+
     }
 
 }

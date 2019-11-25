@@ -4,25 +4,46 @@
 
 <p>
     <label for="name">Name</label>
-    <?php echo $this->tag->textField("name"); ?>
+    <?php echo $this->tag->textField(
+            [
+                "name",
+                "class" => "form-control",
+                "placeholder" => "Enter Full Name"
+            ]
+    ); ?>
 </p>
 
 <p>
     <label for="login">Login</label>
-    <?php echo $this->tag->textField("login"); ?>
+    <?php echo $this->tag->textField([
+        "login",
+        "class" => "form-control",
+        "placeholder" => "Enter Full login Name"
+    ]); ?>
 </p>
 
 <p>
     <label for="email">Email</label>
-    <?php echo $this->tag->textField("email"); ?>
+    <?php echo $this->tag->emailField([
+        "email",
+        "class" => "form-control",
+        "placeholder" => "Enter Your Email"
+    ]); ?>
 </p>
 <p>
     <label for="password">Password</label>
-    <?php echo $this->tag->textField("password"); ?>
+    <?php echo $this->tag->passwordField([
+        "password",
+        "class" => "form-control",
+        "placeholder" => "Password"
+    ]); ?>
 </p>
 
 <p>
-    <?php echo $this->tag->submitButton("Register"); ?>
+    <?php echo $this->tag->submitButton([
+        "Register",
+        "class" => "btn btn-success"
+    ]); ?>
 </p>
 
 </form>

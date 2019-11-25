@@ -23,11 +23,11 @@ class SignupController extends \Phalcon\Mvc\Controller
 
         $success = $user->save(
             [
-                $name,
-                $login,
-                $password,
-                $email,
-                $type,
+                'name' => $name,
+                'login'=>$login,
+                'password'=>$password,
+                'email'=>$email,
+                'type'=>$type,
             ]
         );
 
