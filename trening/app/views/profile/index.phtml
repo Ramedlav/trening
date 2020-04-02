@@ -7,10 +7,12 @@
     else{echo 'DAAAA';}
 
 //    echo '<br>'.$this->session->get('lifetime');
-//$this->partial('login/login');
+//$this->partial('login/index');
 echo $this->tag->linkTo(
         "login/exit",
         "exit"
     );
-$this->partial('menu/index');
+
+    $this->partial('menu/index');
+
 ?>
