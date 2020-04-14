@@ -6,7 +6,7 @@ use application\core\Controller;
 class AccountController extends Controller {
 
     public function loginAction(){
-        $this->view->render("вход");
+        $this->view->render("вход");// передаем тайтл
 //        var_dump($this->route);
     }
 
